@@ -171,7 +171,7 @@ class FetchRequest {
   }
 }
 
-export function fetch(
+export async function fetch(
   input?: Request | string,
   init?: RequestInit
 ): Promise<Response> {
