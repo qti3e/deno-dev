@@ -175,17 +175,5 @@ export function fetch(
   input?: Request | string,
   init?: RequestInit
 ): Promise<Response> {
-  const fetchReq = new FetchRequest(input as string);
-  const response = fetchReq.response;
-  return new Promise((resolve, reject) => {
-    response.onHeader = (response: FetchResponse) => {
-      log("onHeader");
-      resolve(response);
-    };
-    response.onError = (error: Error) => {
-      log("onError", error);
-      reject(error);
-    };
-    fetchReq.start();
-  });
+  throw new Error("Error");
 }
