@@ -171,9 +171,11 @@ class FetchRequest {
   }
 }
 
-export async function fetch(
+export function fetch(
   input?: Request | string,
   init?: RequestInit
 ): Promise<Response> {
-  throw new Error("Error");
+  return new Promise((resolve, reject) => {
+    reject("Error");
+  });
 }
